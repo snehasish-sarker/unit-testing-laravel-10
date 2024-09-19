@@ -16,4 +16,14 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_the_application_returns_symfony(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertSee('Symfony');
+
+        $response->assertStatus(200);
+
+    }
 }
